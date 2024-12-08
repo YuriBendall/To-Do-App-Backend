@@ -1,7 +1,8 @@
 const express = require('express');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const sqlite3 = require('sqlite3').verbose();
+const sqlite3 = require('better-sqlite3');
+const db = new sqlite3('database.db');
 
 const app = express();
 const db = new sqlite3.Database('../database/to-do-app.db');
